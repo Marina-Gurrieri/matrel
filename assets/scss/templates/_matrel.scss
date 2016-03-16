@@ -1,0 +1,653 @@
+body {
+    background:#ffffff;
+    #masthead {
+        .title-bar {
+            background-color: #222222;
+            padding:20px 0.5rem 0;
+            .burger {
+                font-size:40px;
+                display:inline-block;
+                vertical-align: middle;
+                margin-right:20px;
+                color:$orange;
+            }
+            .title-bar-title {
+                a {
+                    img {
+                        @include breakpoint(small down) {
+                            height:30px;
+                        }
+                    }
+                }
+            }
+        }
+        #site-navigation {
+            background-color: #222222;
+            .top-bar-left {
+                width:220px;
+                box-sizing: border-box;
+                padding-left: 10px;
+                ul.menu {
+                    background-color: transparent;
+                    li.home {
+                        a {
+                            display:block;
+                            height:100px;
+                            line-height:100px;
+                            padding:0;
+                            &:hover {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+            .top-bar-right {
+                width: calc(100% - 220px - 100px);
+                font-size:0;
+                line-height:100px;
+                position:relative;
+                padding-right: 10px;
+                @include breakpoint(small down) {
+                    width:100%;
+                    line-height: 40px;
+                    padding:20px 0.5rem;
+                }
+                select.categories {
+                    width:30%;
+                    height:50px;
+                    display:inline-block;
+                    font-size:14px;
+                    margin:0;
+                    vertical-align: middle;
+                    box-sizing:border-box;
+                    background-color: transparent;
+                    border:0;
+                    color:#fff;
+                    border:1px solid #666666;
+                    border-right:0;
+                    position:relative;
+                    option {
+                        background:#222222;
+                    }
+                    @include breakpoint(small down) {
+                        display:none;
+                    }
+                }
+                i.fa.fa-caret-down {
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    font-size:20px;
+                    color:#fff;
+                    margin-left:28%;
+                    line-height: 100px;
+                    @include breakpoint(small down) {
+                        display:none;
+                    }
+                }
+                .trait {
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    margin-left:31.8%;
+                    line-height:100px;
+                    @include breakpoint(small down) {
+                        display:none;
+                    }
+                    &:after {
+                        margin-top:35px;
+                        content:"";
+                        position:absolute;
+                        right:0;
+                        top:0;
+                        display:block;
+                        height:30px;
+                        width:1px;
+                        background:#fff;
+                    }
+                }
+                form#searchform {
+                    width:70%;
+                    display:inline-block;
+                    font-size:14px;
+                    margin:0;
+                    vertical-align: middle;
+                    box-sizing:border-box;
+                    height:50px;
+                    border:1px solid #666666;
+                    border-left:0;
+                    @include breakpoint(small down) {
+                        width:100%;
+                        border-left:1px solid #666666;
+                        height:40px;
+                    }
+                    .input-group {
+                        height:48px;
+                        margin:0;
+                        @include breakpoint(small down) {
+                            height:38px;
+                        }
+                        input.input-group-field {
+                            height:48px;
+                            background-color: transparent;
+                            border:0;
+                            margin-left: 25px;
+                            color:#fff;
+                            width:calc( 100% - 25px);
+                            @include breakpoint(small down) {
+                                margin-left:0;
+                                width: 100%;
+                                height:38px;
+                            }
+                        }
+                        .input-group-button {
+                            position:relative;
+                            line-height:1;
+                            vertical-align: top;
+                            input#searchsubmit {
+                                background-color: transparent;
+                                height:48px;
+                                width:48px;
+                                margin-right:0;
+                                position:relative;
+                                z-index: 2;
+                                @include breakpoint(small down) {
+                                    width: 38px;
+                                    height:38px;
+                                }
+                            }
+                            i {
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                width:48px;
+                                line-height:48px;
+                                font-size:24px;
+                                color:#ffffff;
+                                z-index:1;
+                                background-color: $orange;
+                                @include breakpoint(small down) {
+                                    width: 38px;
+                                    height:38px;
+                                    line-height: 38px;
+                                    font-size:18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #site-menu {
+            background: transparent;
+            @include breakpoint(small only) {
+                background:#222;
+            }
+            .top-bar-right {
+                float:none;
+                display:block;
+                text-align: center;
+                ul#menu-menu-header {
+                    background: transparent;
+                    padding:0 0.5rem;
+                    li {
+                        display: inline-block;
+                        &:not(:last-child) {
+                            border:0;
+                            padding-right:25px;
+                            @include breakpoint(medium only) {
+                                padding-right:15px;
+                            }
+                        }
+                        a {
+                            color:$orange;
+                            font-size:16px;
+                            font-weight:bold;
+                            text-transform: uppercase;
+                            padding:30px 0;
+                            height:inherit;
+                            &:hover:not(.button){
+                                background:transparent;
+                            }
+                            @include breakpoint(medium only) {
+                                padding:15px 0;
+                                font-size:14px;
+                            }
+                        }
+                    }
+                }
+                ul#menu-menu-header-1 {
+                    background: transparent;
+                    li {
+                        text-align:left;
+                        margin-top:1rem;
+                        &:not(:last-child) {
+                            border-right:0;
+                        }
+                        &:first-of-type {
+                            margin-top:0;
+                        }
+                        &:last-of-type {
+                            margin-bottom:20px;
+                        }
+                        a {
+                            color:$orange;
+                            height:inherit;
+                            padding:0;
+                            text-transform: uppercase;
+                            font-size:14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .container {
+        .fildariane {
+            background:#e6e6e6;
+            padding:15px 1rem;
+            margin-bottom:60px;
+            .breadcrumbs{
+                margin-bottom:0;
+                li {
+                    font-size:14px;
+                    color:#222222;
+                    text-transform: none;
+                    font-weight:normal;
+                    color:$orange;
+                    line-height: 1;
+                    @include breakpoint(small down) {
+                        line-height:inherit;
+                    }
+                    a {
+                        color:#222222;
+                    }
+                    &:not(:last-child){
+                        &::after {
+                            content:" ";
+                            height:1px;
+                            width:20px;
+                            background:#000;
+                            display:inline-block;
+                            vertical-align: middle;
+                            margin:0 15px;
+                            top:0;
+                        }
+                    }
+                }
+            }
+        }
+        .produit {
+            .gauche {
+                @include breakpoint(small down) {
+                    margin-bottom:30px;
+                }
+                p {
+                    color:#222222;
+                    font-size:16px;
+                    font-style: italic;
+                }
+                section {
+                    position:relative;
+                    ul {
+                        padding:0 20px;
+                        margin:0;
+                        li {
+                            display:inline-block;
+                        }
+                    }
+                    nav {
+                        position:absolute;
+                        top:50%;
+                        margin-top:-25px;
+                        width:100%;
+                        .gauche {
+                            cursor: pointer;
+                            position:absolute;
+                            left:0;
+                        }
+                        .droite {
+                            cursor: pointer;
+                            position:absolute;
+                            right:0;
+                        }
+                    }
+                }
+            }
+            .droite {
+                .gros-bouton {
+                    display:inline-block;
+                    padding:15px 30px;
+                    box-sizing:border-box;
+                    color:#fff;
+                    font-size:17px;
+                    font-weight:bold;
+                    background:$orange;
+                    margin-bottom:30px;
+                    margin-right:20px;
+                    @include breakpoint(small down) {
+                        width:100%;
+                        margin-right:0;
+                        margin-bottom: 10px;
+                    }
+                    i {
+                        font-size:24px;
+                        display:inline-block;
+                        vertical-align: middle;
+                        margin-right:10px;
+                    }
+                }
+                .gros-bouton-2 {
+                    display:inline-block;
+                    padding:14px 20px;
+                    box-sizing:border-box;
+                    color:$orange;
+                    font-size:17px;
+                    font-weight:bold;
+                    background:#fff;
+                    border:1px solid $orange;
+                    margin-bottom:30px;
+                    @include breakpoint(small down) {
+                        width:100%;
+                    }
+                    i {
+                        font-size:24px;
+                        display:inline-block;
+                        vertical-align: middle;
+                        margin-right:10px;
+                    }
+                }
+                h2 {
+                    font-size:24px;
+                    font-weight:bold;
+                    line-height: 28px;
+                    color:$orange;
+                    text-transform: uppercase;
+                    margin-bottom:0;
+                    @include breakpoint(small down) {
+                        font-size:20px;
+                    }
+                }
+                h3 {
+                    font-size:20px;
+                    line-height:28px;
+                    color:orange;
+                    font-weight:normal;
+                    margin-bottom:0;
+                    @include breakpoint(small down) {
+                        font-size:18px;
+                    }
+                }
+                section {
+                    margin-top:25px;
+                    font-size:14px;
+                    p {
+                        &:last-of-type {
+                            margin-bottom:0;
+                        }
+                    }
+                }
+            }
+        }
+        .caracteristiquesavis {
+            margin-top:90px;
+            @include breakpoint(small down) {
+                margin-top:50px;
+            }
+            header {
+                background:$orange;
+                padding:30px 0;
+                color:#fff;
+                font-size:18px;
+                font-weight:bold;
+                margin-bottom:30px;
+                @include breakpoint(small down) {
+                    margin-bottom: 20px;
+                }
+                .fa.fa-star {
+                    font-weight:normal;
+                    margin-right:10px;
+                    font-size:16px;
+                    color:#a66519;
+                    &.or {
+                        color:#f7c11e;
+                    }
+                    &:first-of-type {
+                        margin-left:15px;
+                    }
+                    &:last-of-type {
+                        margin-right:15px;
+                    }
+                }
+                img {
+                    @include breakpoint(small down) {
+                        display:inline-block;
+                        vertical-align: text-top;
+                        margin-left:10px;
+                    }
+                }
+            }
+            section {
+                header {
+                    padding:30px 0.5rem;
+                    @include breakpoint(small down) {
+                        padding:15px 0.5rem;
+                        text-align: center;
+                    }
+                }
+                .border {
+                    border-right:1px solid $orange;
+                    @include breakpoint(small down) {
+                        border:0;
+                    }
+                }
+                ul {
+                    li {
+                        font-size:16px;
+                        margin-bottom:10px;
+                        color:#222222;
+                        &:last-of-type {
+                            margin-bottom:0;
+                        }
+                    }
+                }
+                .avis {
+                    margin-bottom:80px;
+                    @include breakpoint(small down) {
+                        margin-bottom:50px;
+                    }
+                    p {
+                        line-height:1;
+                        &.auteur {
+                            color:#a66519;
+                            font-weight:lighter;
+                            font-size:14px;
+                            strong {
+                                font-weight:bold;
+                                color:$orange;
+                                    font-size:16px;
+                            }
+                        }
+                    }
+                    .fa.fa-star {
+                        font-weight:normal;
+                        margin-right:10px;
+                        font-size:14px;
+                        color:#c8c6c4;
+                        &.or {
+                            color:#f7c11e;
+                        }
+                        &:last-of-type {
+                            margin-right:15px;
+                        }
+                    }
+                    blockquote {
+                        font-size:14px;
+                        color:$orange;
+                        font-style: italic;
+                        padding:0;
+                        border:0;
+                    }
+                    &+div {
+                        a {
+                            color:$orange;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .autres-produits {
+            margin-top:60px;
+            h5 {
+                font-size:18px;
+                color:$orange;
+                font-weight:bold;
+                margin-bottom:30px;
+                @include breakpoint(small down) {
+                    padding-top:30px;
+                    border-top:1px solid $orange;
+                    text-align:left;
+                }
+            }
+            .suggestion {
+                @include breakpoint(small down) {
+                    margin-bottom:10px;
+                }
+                section {
+                    border:1px solid #dadada;
+                    padding:23px;
+                    transition:border ease 0.3s;
+                    &:hover {
+                        border:1px solid $orange;
+                        h6 {
+                            border-top:1px solid $orange;
+                        }
+                    }
+                    div {
+                        line-height:154px;
+                        margin-bottom:23px;
+                        text-align:center;
+                        img {
+                            vertical-align: middle;
+                            display:inline-block;
+                        }
+                    }
+                    h6 {
+                        border-top:1px solid #dadada;
+                        transition:border ease 0.3s;
+                        padding-top:18px;
+                        font-size:16px;
+                        font-weight:bold;
+                        color:$orange;
+                    }
+                    p {
+                        color:#8a8a8a;
+                        font-size:12px;
+                        margin-bottom:0;
+                        line-height:1;
+                        .fa.fa-star {
+                            font-weight:normal;
+                            margin-right:10px;
+                            font-size:13px;
+                            color:#c8c6c4;
+                            &.or {
+                                color:#f7c11e;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #footer-container {
+        background:#222222;
+        color:#fff;
+        h4 {
+            font-size:18px;
+            text-transform:uppercase;
+            font-weight:bold;
+            line-height:1;
+            margin-bottom:30px;
+            @include breakpoint(small down) {
+                margin-top:30px;
+                margin-bottom:10px;
+            }
+            &::after {
+                margin-top:10px;
+                content:" ";
+                display:block;
+                height:5px;
+                width:57px;
+                background:$orange;
+                @include breakpoint(small down) {
+                    height:4px;
+                }
+            }
+        }
+        .navigation {
+            h4 {
+                @include breakpoint(small down) {
+                    margin-top:0;
+                }
+            }
+            .menu-footer {
+                li {
+                    a {
+                        color:#e1e1e1;
+                        font-size:16px;
+                        font-weight:normal;
+                    }
+                }
+            }
+        }
+        .coordonnees {
+            h4 {
+                margin-bottom:57px;
+                @include breakpoint(small down) {
+                    margin-bottom:10px;
+                }
+            }
+            p {
+                margin-bottom:0;
+                line-height:20px;
+                font-size:16px;
+                color:#e1e1e1;
+                span {
+                    color:$orange;
+                }
+            }
+        }
+        input.email {
+            background:transparent;
+            border:1px solid #8e8e8e;
+            color:#fff;
+            height:30px;
+        }
+        input.bouton {
+            background:$orange;
+            border:0;
+            color:#fff;
+            padding:20px 0;
+            display:block;
+            width:100%;
+            text-transform:uppercase;
+            font-size:16px;
+            font-weight:bold;
+        }
+    }
+    .copyright-mentions-legales {
+        padding:50px 0;
+        color:#222222;
+        @include breakpoint(small down) {
+            padding:30px 0;
+            font-size:12px;
+        }
+        a {
+            color:#222222;
+        }
+    }
+}
